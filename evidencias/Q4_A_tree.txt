@@ -1,0 +1,7 @@
+-> Filter: ((c.segment = <cache>((@segment))) and (c.city = <cache>((@city))) and ((select #2) > 0))  (cost=496 rows=48.8)
+    -> Index scan on c using PRIMARY  (cost=496 rows=4883)
+    -> Select #2 (subquery in condition; dependent)
+        -> Aggregate: count(0)  (cost=1.04 rows=1)
+            -> Filter: ((o.`status` = 'PAID') and (o.order_ts >= <cache>((@long_start_ts))) and (o.order_ts < <cache>((@end_ts))))  (cost=1.04 rows=0.05)
+                -> Index lookup on o using fk_orders_customer (customer_id=c.customer_id)  (cost=1.04 rows=4.13)
+

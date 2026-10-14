@@ -1,0 +1,10 @@
++-------------------------+---------+----------+----------+
+| Table                   | Op      | Msg_type | Msg_text |
++-------------------------+---------+----------+----------+
+| ep2_lab.ep2_customers   | analyze | status   | OK       |
+| ep2_lab.ep2_products    | analyze | status   | OK       |
+| ep2_lab.ep2_stores      | analyze | status   | OK       |
+| ep2_lab.ep2_orders      | analyze | status   | OK       |
+| ep2_lab.ep2_order_items | analyze | status   | OK       |
+| ep2_lab.ep2_payments    | analyze | status   | OK       |
++-------------------------+---------+----------+----------+

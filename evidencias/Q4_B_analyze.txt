@@ -1,0 +1,6 @@
+-> Nested loop semijoin  (cost=566 rows=2.44) (actual time=0.0527..2.58 rows=118 loops=1)
+    -> Filter: ((c.segment = <cache>((@segment))) and (c.city = <cache>((@city))))  (cost=496 rows=48.8) (actual time=0.0259..1.04 rows=335 loops=1)
+        -> Index scan on c using PRIMARY  (cost=496 rows=4883) (actual time=0.0185..0.769 rows=5000 loops=1)
+    -> Filter: ((o.`status` = 'PAID') and (o.order_ts >= <cache>((@long_start_ts))) and (o.order_ts < <cache>((@end_ts))))  (cost=0.0516 rows=0.05) (actual time=0.00452..0.00452 rows=0.352 loops=335)
+        -> Index lookup on o using fk_orders_customer (customer_id=c.customer_id)  (cost=0.0516 rows=4.13) (actual time=0.00389..0.00422 rows=3.1 loops=335)
+

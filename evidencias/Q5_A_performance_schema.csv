@@ -1,0 +1,2 @@
+Performance Schema evidence unavailable. This does not invalidate the timing run.
+Reason: ProgrammingError: 1142 (42000): SELECT command denied to user 'ep2_runner'@'localhost' for table 'threads'
