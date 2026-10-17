@@ -1,0 +1,43 @@
+Linux 6.18.33.2-microsoft-standard-WSL2 (ThinkPadP14s) 	10/16/26 	_x86_64_	(22 CPU)
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay   cswch/s nvcswch/s  Command
+1792199227    106       416   47.00    0.00    0.00    0.00   47.00    12      0.00      0.00 3139340  521328   3.24      0.00      0.00      0.00       0      0.00      0.00  mysqld
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay   cswch/s nvcswch/s  Command
+1792199228    106       416   55.00    0.00    0.00    0.00   55.00    12      0.00      0.00 3139340  521328   3.24      0.00      0.00      0.00       0      0.00      0.00  mysqld
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay   cswch/s nvcswch/s  Command
+1792199229    106       416   56.00    0.00    0.00    0.00   56.00    12      0.00      0.00 3139340  521328   3.24      0.00      0.00      0.00       0      0.00      0.00  mysqld
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay   cswch/s nvcswch/s  Command
+1792199230    106       416   56.00    0.00    0.00    0.00   56.00    12      0.00      0.00 3139340  521328   3.24      0.00      0.00      0.00       0      0.00      0.00  mysqld
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay   cswch/s nvcswch/s  Command
+1792199231    106       416   57.00    0.00    0.00    0.00   57.00    12      0.00      0.00 3139340  521328   3.24      0.00      0.00      0.00       0      0.00      0.00  mysqld
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay   cswch/s nvcswch/s  Command
+1792199232    106       416   56.00    0.00    0.00    0.00   56.00    12      0.00      0.00 3139340  521328   3.24      0.00      0.00      0.00       0      0.00      0.00  mysqld
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay   cswch/s nvcswch/s  Command
+1792199233    106       416   57.00    0.00    0.00    0.00   57.00    12      0.00      0.00 3139340  521328   3.24      0.00      0.00      0.00       0      0.00      0.00  mysqld
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay   cswch/s nvcswch/s  Command
+1792199234    106       416   57.00    0.00    0.00    0.00   57.00    12      0.00      0.00 3139340  521328   3.24      0.00      0.00      0.00       0      0.00      0.00  mysqld
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay   cswch/s nvcswch/s  Command
+1792199235    106       416   56.00    0.00    0.00    0.00   56.00    12      0.00      0.00 3139340  521328   3.24      0.00      0.00      0.00       0      0.00      0.00  mysqld
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay   cswch/s nvcswch/s  Command
+1792199236    106       416   55.00    0.00    0.00    0.00   55.00    12      0.00      0.00 3139340  521328   3.24      0.00      0.00      0.00       0      0.00      0.00  mysqld
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay   cswch/s nvcswch/s  Command
+1792199237    106       416   55.00    0.00    0.00    0.00   55.00    12      0.00      0.00 3139340  521328   3.24      0.00      0.00      0.00       0      0.00      0.00  mysqld
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay   cswch/s nvcswch/s  Command
+1792199238    106       416   55.00    0.00    0.00    0.00   55.00    12      0.00      0.00 3139340  521328   3.24      0.00      0.00      0.00       0      0.00      0.00  mysqld
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay   cswch/s nvcswch/s  Command
+1792199239    106       416   56.00    0.00    0.00    0.00   56.00    12      0.00      0.00 3139340  521328   3.24      0.00      0.00      0.00       0      0.00      0.00  mysqld
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay   cswch/s nvcswch/s  Command
+1792199240    106       416   34.65    0.00    0.00    0.00   34.65    12      0.00      0.00 3139340  521328   3.24      0.00      0.00      0.00       0      0.00      0.00  mysqld

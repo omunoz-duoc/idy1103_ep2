@@ -1,0 +1,111 @@
+{
+  "query_block": {
+    "select_id": 1,
+    "cost_info": {
+      "query_cost": "5330.94"
+    },
+    "ordering_operation": {
+      "using_filesort": true,
+      "grouping_operation": {
+        "using_temporary_table": true,
+        "using_filesort": false,
+        "nested_loop": [
+          {
+            "table": {
+              "table_name": "o",
+              "access_type": "range",
+              "possible_keys": [
+                "PRIMARY",
+                "idx_ep2_q3_order_ts"
+              ],
+              "key": "idx_ep2_q3_order_ts",
+              "used_key_parts": [
+                "order_ts"
+              ],
+              "key_length": "5",
+              "rows_examined_per_scan": 1574,
+              "rows_produced_per_join": 1416,
+              "filtered": "90.00",
+              "index_condition": "((`ep2_lab`.`o`.`order_ts` >= <cache>((@`start_ts`))) and (`ep2_lab`.`o`.`order_ts` < <cache>((@`end_ts`))))",
+              "cost_info": {
+                "read_cost": "566.90",
+                "eval_cost": "141.66",
+                "prefix_cost": "708.56",
+                "data_read_per_join": "166K"
+              },
+              "used_columns": [
+                "order_id",
+                "order_ts",
+                "status"
+              ],
+              "attached_condition": "(`ep2_lab`.`o`.`status` <> 'CANCELLED')"
+            }
+          },
+          {
+            "table": {
+              "table_name": "i",
+              "access_type": "ref",
+              "possible_keys": [
+                "fk_items_order",
+                "fk_items_product"
+              ],
+              "key": "fk_items_order",
+              "used_key_parts": [
+                "order_id"
+              ],
+              "key_length": "8",
+              "ref": [
+                "ep2_lab.o.order_id"
+              ],
+              "rows_examined_per_scan": 4,
+              "rows_produced_per_join": 6603,
+              "filtered": "100.00",
+              "cost_info": {
+                "read_cost": "1650.85",
+                "eval_cost": "660.34",
+                "prefix_cost": "3019.75",
+                "data_read_per_join": "257K"
+              },
+              "used_columns": [
+                "item_id",
+                "order_id",
+                "product_id",
+                "qty"
+              ]
+            }
+          },
+          {
+            "table": {
+              "table_name": "p",
+              "access_type": "eq_ref",
+              "possible_keys": [
+                "PRIMARY"
+              ],
+              "key": "PRIMARY",
+              "used_key_parts": [
+                "product_id"
+              ],
+              "key_length": "8",
+              "ref": [
+                "ep2_lab.i.product_id"
+              ],
+              "rows_examined_per_scan": 1,
+              "rows_produced_per_join": 6603,
+              "filtered": "100.00",
+              "cost_info": {
+                "read_cost": "1650.85",
+                "eval_cost": "660.34",
+                "prefix_cost": "5330.94",
+                "data_read_per_join": "4M"
+              },
+              "used_columns": [
+                "product_id",
+                "product_name"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "case": "Q5",
+  "sql": "CREATE INDEX idx_ep2_q5_store_ts_status_total ON ep2_orders(store_id, order_ts, status, total_amount)",
+  "created": true,
+  "cleanup_succeeded": true,
+  "create_elapsed_ms": 139.90959990769625,
+  "support_index_restored": false,
+  "cleanup_elapsed_ms": 23.05435191374272
+}

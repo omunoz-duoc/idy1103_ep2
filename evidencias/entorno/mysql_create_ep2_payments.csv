@@ -1,0 +1,11 @@
+Table,Create Table
+ep2_payments,"CREATE TABLE `ep2_payments` (
+  `payment_id` bigint NOT NULL AUTO_INCREMENT,
+  `order_id` bigint NOT NULL,
+  `paid_ts` datetime NOT NULL,
+  `method` varchar(20) NOT NULL,
+  `amount` decimal(12,2) NOT NULL,
+  PRIMARY KEY (`payment_id`),
+  KEY `fk_payments_order` (`order_id`),
+  CONSTRAINT `fk_payments_order` FOREIGN KEY (`order_id`) REFERENCES `ep2_orders` (`order_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16384 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci"

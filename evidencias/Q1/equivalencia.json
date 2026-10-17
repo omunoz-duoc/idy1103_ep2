@@ -1,0 +1,14 @@
+{
+  "same_results": true,
+  "sha256": "287694d698a6858bdeb86dcc7a0fc34eefcfbb876cece0fde5b93e89d4f772a4",
+  "rows_returned": 50,
+  "validated_batches": [
+    "A/carga",
+    "A/micro",
+    "B/carga",
+    "B/micro",
+    "C/carga",
+    "C/micro"
+  ],
+  "scope": "Multiconjunto tipado de filas; los CSV conservan el orden de salida."
+}

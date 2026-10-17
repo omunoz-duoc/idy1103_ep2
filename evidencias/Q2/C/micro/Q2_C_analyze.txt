@@ -1,0 +1,4 @@
+-> Group aggregate: count(0), sum(p.amount), avg(p.amount)  (cost=102 rows=3) (actual time=0.163..0.163 rows=1 loops=1)
+    -> Filter: ((p.method = <cache>((@method))) and (p.paid_ts >= <cache>((@start_ts))) and (p.paid_ts < <cache>((@end_ts))))  (cost=69.6 rows=324) (actual time=0.0159..0.137 rows=324 loops=1)
+        -> Covering index range scan on p using idx_ep2_q2_method_ts_amount over (method = 'CARD' AND '2026-09-30 00:00:00' <= paid_ts < '2026-10-14 00:00:00')  (cost=69.6 rows=324) (actual time=0.0138..0.0608 rows=324 loops=1)
+

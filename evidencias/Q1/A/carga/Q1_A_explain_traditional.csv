@@ -1,0 +1,2 @@
+id,select_type,table,partitions,type,possible_keys,key,key_len,ref,rows,filtered,Extra
+1,SIMPLE,o,NULL,ref,fk_orders_store,fk_orders_store,8,const,992,10.0,Using where; Using filesort

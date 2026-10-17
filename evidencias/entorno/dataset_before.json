@@ -1,0 +1,26 @@
+{
+  "ep2_customers": {
+    "rows": 5000,
+    "sha256": "f888adb3a58b2f04ca8460ab626739a39751c326303e13862f82b5aac9bbe2aa"
+  },
+  "ep2_products": {
+    "rows": 2000,
+    "sha256": "851344a8c40163bc609f2ad6caf6731fe4a8b64cc3dd47a2772dd6f09fb31f12"
+  },
+  "ep2_stores": {
+    "rows": 20,
+    "sha256": "0679022bf3e9ffe23e5e061fd9457f16244b37eb99a81064bfcfe70b6a44156b"
+  },
+  "ep2_orders": {
+    "rows": 20000,
+    "sha256": "f145d2ebef599505149051e68e4acbad0e7a60577d74b09e16997aba30d77b53"
+  },
+  "ep2_order_items": {
+    "rows": 100000,
+    "sha256": "193b1959b98f5da20e65cd56d40efd2357e010d17dff77e271ffd74dbd7228ee"
+  },
+  "ep2_payments": {
+    "rows": 15000,
+    "sha256": "91eec6b2a6bf5ea3f04e8b0f3031b2b9f50c4948bf4e37de7bf8f031d3dc6db2"
+  }
+}

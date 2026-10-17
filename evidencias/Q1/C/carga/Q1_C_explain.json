@@ -1,0 +1,44 @@
+{
+  "query_block": {
+    "select_id": 1,
+    "cost_info": {
+      "query_cost": "75.86"
+    },
+    "ordering_operation": {
+      "using_filesort": false,
+      "table": {
+        "table_name": "o",
+        "access_type": "range",
+        "possible_keys": [
+          "fk_orders_store",
+          "idx_ep2_q1_store_status_ts"
+        ],
+        "key": "idx_ep2_q1_store_status_ts",
+        "used_key_parts": [
+          "store_id",
+          "status",
+          "order_ts"
+        ],
+        "key_length": "95",
+        "rows_examined_per_scan": 168,
+        "rows_produced_per_join": 168,
+        "filtered": "100.00",
+        "index_condition": "((`ep2_lab`.`o`.`status` = 'CREATED') and (`ep2_lab`.`o`.`store_id` = <cache>((@`store_id`))) and (`ep2_lab`.`o`.`order_ts` >= <cache>((@`long_start_ts`))) and (`ep2_lab`.`o`.`order_ts` < <cache>((@`end_ts`))))",
+        "cost_info": {
+          "read_cost": "59.06",
+          "eval_cost": "16.80",
+          "prefix_cost": "75.86",
+          "data_read_per_join": "19K"
+        },
+        "used_columns": [
+          "order_id",
+          "customer_id",
+          "store_id",
+          "order_ts",
+          "status",
+          "total_amount"
+        ]
+      }
+    }
+  }
+}

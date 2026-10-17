@@ -1,0 +1,2 @@
+id,select_type,table,partitions,type,possible_keys,key,key_len,ref,rows,filtered,Extra
+1,SIMPLE,p,NULL,range,idx_ep2_q2_method_ts_amount,idx_ep2_q2_method_ts_amount,87,NULL,324,100.0,Using where; Using index

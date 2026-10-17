@@ -1,0 +1,19 @@
+{
+  "clean": true,
+  "cooldown": 10,
+  "iterations": 30,
+  "load_iterations": 10000,
+  "warmups": 2,
+  "interval": 1,
+  "pid": 416,
+  "sudo_monitor": true,
+  "skip_load": false,
+  "params": "/home/aframuz/code/mvmv/duoc/6to_semestre/admin_base_datos/evaluacion_02/sql/00_parametros.sql",
+  "analyze_initial": false,
+  "dry_run": false,
+  "python": "3.13.5 | packaged by Anaconda, Inc. | (main, Jun 12 2025, 16:09:02) [GCC 11.2.0]",
+  "started_at": "2026-10-16T22:06:10.044472-03:00",
+  "status": "complete",
+  "backup": "/home/aframuz/code/mvmv/duoc/6to_semestre/admin_base_datos/evaluacion_02/evidencias_respaldos/20261016_220610__gwcgxv1",
+  "finished_at": "2026-10-16T22:24:20.608794-03:00"
+}

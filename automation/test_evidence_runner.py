@@ -1,6 +1,10 @@
 import datetime as dt
 import decimal
+import json
+import tempfile
 import unittest
+from pathlib import Path
+from unittest.mock import Mock, patch
 
 import evidence_runner as runner
 
@@ -41,6 +45,20 @@ class EvidenceRunnerTests(unittest.TestCase):
 
     def test_nearest_rank_p95(self):
         self.assertEqual(runner.percentile_nearest_rank(list(range(1, 11)), 0.95), 10)
+
+    def test_performance_schema_falls_back_to_short_history(self):
+        cursor = Mock()
+        cursor.fetchone.return_value = (123,)
+        cursor.description = [('EVENT_ID',)]
+        cursor.fetchall.side_effect = [[], [(456,)]]
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / 'ps.csv'
+            with patch.object(runner, 'execute_fetch'):
+                runner.try_performance_schema(cursor, path, 'SELECT 1', 'ep2:Q1:A:diagnostic')
+            data = json.loads(path.with_suffix('.status.json').read_text())
+            self.assertEqual(data['source'], 'events_statements_history')
+            sql, params = cursor.execute.call_args.args
+            self.assertEqual(params[1], '/* ep2:Q1:A:diagnostic */%')
 
 
 if __name__ == "__main__":

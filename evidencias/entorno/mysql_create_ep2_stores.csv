@@ -1,0 +1,7 @@
+Table,Create Table
+ep2_stores,"CREATE TABLE `ep2_stores` (
+  `store_id` bigint NOT NULL AUTO_INCREMENT,
+  `store_name` varchar(80) NOT NULL,
+  `region` varchar(40) NOT NULL,
+  PRIMARY KEY (`store_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci"

@@ -19,6 +19,8 @@ import time
 from pathlib import Path
 from typing import Any, Sequence
 
+from os_monitor import ProcessMonitor
+
 try:
     import mysql.connector
     from mysql.connector import Error as MySQLError
@@ -57,7 +59,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--stage", required=True, choices=("A", "B", "C"), type=str.upper)
     parser.add_argument("--query", required=True, type=Path)
     parser.add_argument("--params", required=True, type=Path)
-    parser.add_argument("--output", type=Path, default=Path("evidencias"))
+    parser.add_argument("--output", type=Path, help="default: evidencias/Qn")
     parser.add_argument("--host", default=os.getenv("EP2_MYSQL_HOST", "127.0.0.1"))
     parser.add_argument("--port", type=int, default=int(os.getenv("EP2_MYSQL_PORT", "3306")))
     parser.add_argument("--user", default=os.getenv("EP2_MYSQL_USER", "root"))
@@ -70,11 +72,19 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--warmups", type=int, default=2)
     parser.add_argument("--iterations", type=int, default=10)
     parser.add_argument("--connect-timeout", type=int, default=10)
+    parser.add_argument("--pidstat-pid", type=int, help="local MySQL PID to sample during the batch")
+    parser.add_argument("--pidstat-interval", type=int, default=1)
+    parser.add_argument("--pidstat-sudo", action="store_true", help="use cached sudo credentials for OS sampling only")
+    parser.add_argument("--extended", action="store_true", help="collect extra plans, global counters, waits and index sizes")
     args = parser.parse_args()
     if not re.fullmatch(r"Q[1-9][0-9]*", args.case_id):
         parser.error("--case must look like Q1, Q2, etc.")
+    if args.output is None:
+        args.output = Path('evidencias') / args.case_id
     if args.warmups < 0 or args.iterations < 1:
         parser.error("--warmups must be >= 0 and --iterations must be >= 1")
+    if args.pidstat_interval < 1 or (args.pidstat_pid is not None and args.pidstat_pid < 1):
+        parser.error("--pidstat-pid and --pidstat-interval must be positive")
     return args
 
 
@@ -323,27 +333,41 @@ def try_performance_schema(cursor: Any, path: Path, query: str, tag: str) -> Non
             raise RuntimeError("No Performance Schema thread was found for this connection")
         thread_id = found[0]
         execute_fetch(cursor, tagged_query)
-        cursor.execute(
-            """
-            SELECT EVENT_ID, SQL_TEXT, ROUND(TIMER_WAIT/1e9,3) AS elapsed_ms,
-                   ROUND(LOCK_TIME/1e9,3) AS lock_ms, ROWS_EXAMINED, ROWS_SENT,
-                   CREATED_TMP_TABLES, CREATED_TMP_DISK_TABLES, SORT_ROWS, SELECT_SCAN
-            FROM performance_schema.events_statements_history_long
-            WHERE THREAD_ID=%s AND SQL_TEXT LIKE %s
-            ORDER BY EVENT_ID DESC LIMIT 1
-            """,
-            (thread_id, f"%{tag}%"),
-        )
-        columns = [item[0] for item in cursor.description]
-        rows = cursor.fetchall()
-        if not rows:
-            raise RuntimeError("The tagged statement was not present in events_statements_history_long")
-        write_rows(path, columns, rows)
+        failures = []
+        for history in ('events_statements_history_long', 'events_statements_history'):
+            try:
+                cursor.execute(
+                    f"""
+                    SELECT EVENT_ID, SQL_TEXT, ROUND(TIMER_WAIT/1e9,3) AS elapsed_ms,
+                           ROUND(LOCK_TIME/1e9,3) AS lock_ms, ROWS_EXAMINED, ROWS_SENT,
+                           CREATED_TMP_TABLES, CREATED_TMP_DISK_TABLES, SORT_ROWS, SELECT_SCAN
+                    FROM performance_schema.{history}
+                    WHERE THREAD_ID=%s AND SQL_TEXT LIKE %s
+                    ORDER BY EVENT_ID DESC LIMIT 1
+                    """,
+                    (thread_id, f"/* {tag} */%"),
+                )
+                columns = [item[0] for item in cursor.description]
+                rows = cursor.fetchall()
+                if not rows:
+                    failures.append(f'{history}: tagged event unavailable')
+                    continue
+                write_rows(path, columns, rows)
+                path.with_suffix('.status.json').write_text(
+                    json.dumps({'available': True, 'source': history}) + '\n', encoding='utf-8'
+                )
+                return
+            except Exception as exc:
+                failures.append(f'{history}: {exc}')
+        raise RuntimeError('; '.join(failures))
     except Exception as exc:  # permissions/configuration differ between lab installations
         path.write_text(
             "Performance Schema evidence unavailable. This does not invalidate the timing run.\n"
             f"Reason: {type(exc).__name__}: {exc}\n",
             encoding="utf-8",
+        )
+        path.with_suffix('.status.json').write_text(
+            json.dumps({'available': False, 'reason': str(exc)}) + '\n', encoding='utf-8'
         )
 
 
@@ -395,37 +419,49 @@ def main() -> int:
         write_table_sizes(cursor, args.output / f"{stem}_table_sizes.csv", args.database)
         write_plan(cursor, args.output / f"{stem}_tree.txt", "EXPLAIN FORMAT=TREE", query)
         write_plan(cursor, args.output / f"{stem}_analyze.txt", "EXPLAIN ANALYZE", query)
+        if args.extended:
+            from extra_evidence import extra_plans, snapshot, global_delta, index_sizes
+            extra_plans(cursor, args.output, stem, query)
+            index_sizes(cursor, args.output, f'{stem}_sizes')
 
         for _ in range(args.warmups):
             execute_fetch(cursor, query)
 
-        before = status_snapshot(cursor)
+        if args.extended:
+            snapshot(cursor, args.output, f'{stem}_before')
+
         timing_rows: list[dict[str, Any]] = []
         reference_columns: list[str] | None = None
         reference_rows: list[tuple[Any, ...]] | None = None
         reference_checksum: str | None = None
-        for iteration in range(1, args.iterations + 1):
-            started = time.perf_counter_ns()
-            columns, rows = execute_fetch(cursor, query)
-            elapsed_ms = (time.perf_counter_ns() - started) / 1_000_000
-            checksum = result_checksum(columns, rows)
-            if reference_checksum is None:
-                reference_columns, reference_rows, reference_checksum = columns, rows, checksum
-            elif checksum != reference_checksum:
-                raise RuntimeError(
-                    f"Result changed within the same run at iteration {iteration}; stop and investigate"
+        with ProcessMonitor(args.pidstat_pid, args.pidstat_interval, args.output, stem, args.pidstat_sudo):
+            before = status_snapshot(cursor)
+            for iteration in range(1, args.iterations + 1):
+                started = time.perf_counter_ns()
+                columns, rows = execute_fetch(cursor, query)
+                elapsed_ms = (time.perf_counter_ns() - started) / 1_000_000
+                checksum = result_checksum(columns, rows)
+                if reference_checksum is None:
+                    reference_columns, reference_rows, reference_checksum = columns, rows, checksum
+                elif checksum != reference_checksum:
+                    raise RuntimeError(
+                        f"Result changed within the same run at iteration {iteration}; stop and investigate"
+                    )
+                timing_rows.append(
+                    {
+                        "case": args.case_id,
+                        "stage": args.stage,
+                        "iteration": iteration,
+                        "elapsed_ms": round(elapsed_ms, 6),
+                        "rows_returned": len(rows),
+                        "sha256": checksum,
+                    }
                 )
-            timing_rows.append(
-                {
-                    "case": args.case_id,
-                    "stage": args.stage,
-                    "iteration": iteration,
-                    "elapsed_ms": round(elapsed_ms, 6),
-                    "rows_returned": len(rows),
-                    "sha256": checksum,
-                }
-            )
-        after = status_snapshot(cursor)
+            after = status_snapshot(cursor)
+
+        if args.extended:
+            snapshot(cursor, args.output, f'{stem}_after')
+            global_delta(args.output, stem)
 
         with (args.output / f"{stem}_timings.csv").open("w", encoding="utf-8", newline="") as handle:
             writer = csv.DictWriter(handle, fieldnames=timing_rows[0].keys())

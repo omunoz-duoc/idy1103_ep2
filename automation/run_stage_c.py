@@ -96,7 +96,7 @@ def main() -> int:
     )
     parser.add_argument("--case", required=True, choices=tuple(INDEXES), type=str.upper)
     parser.add_argument("--params", type=Path, default=Path("sql/00_parametros.sql"))
-    parser.add_argument("--output", type=Path, default=Path("evidencias"))
+    parser.add_argument("--output", type=Path, help="default: evidencias/Qn")
     parser.add_argument("--iterations", type=int, default=10)
     parser.add_argument("--warmups", type=int, default=2)
     parser.add_argument("--host", default=os.getenv("EP2_MYSQL_HOST", "127.0.0.1"))
@@ -104,12 +104,17 @@ def main() -> int:
     parser.add_argument("--user", default=os.getenv("EP2_MYSQL_USER", "root"))
     parser.add_argument("--database", default=os.getenv("EP2_MYSQL_DATABASE", "ep2_lab"))
     parser.add_argument("--password-env", default="EP2_MYSQL_PASSWORD")
+    parser.add_argument("--pidstat-pid", type=int, help="local MySQL PID to monitor during SELECTs")
+    parser.add_argument("--pidstat-interval", type=int, default=1)
+    parser.add_argument("--pidstat-sudo", action="store_true")
     parser.add_argument(
         "--cleanup-only",
         action="store_true",
         help="repair FK support if needed and remove this case's leftover index",
     )
     args = parser.parse_args()
+    if args.output is None:
+        args.output = Path('evidencias') / args.case
 
     if mysql is None:
         print(
@@ -181,6 +186,13 @@ def main() -> int:
             "--database", args.database,
             "--password-env", args.password_env,
         ]
+        if args.pidstat_pid is not None:
+            command.extend([
+                "--pidstat-pid", str(args.pidstat_pid),
+                "--pidstat-interval", str(args.pidstat_interval),
+            ])
+            if args.pidstat_sudo:
+                command.append("--pidstat-sudo")
         subprocess.run(command, check=True)
         return 0
     finally:

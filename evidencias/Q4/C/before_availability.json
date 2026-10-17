@@ -1,0 +1,6 @@
+{
+  "index_pages": {
+    "available": false,
+    "reason": "ProgrammingError: 1142 (42000): SELECT command denied to user 'ep2_runner'@'localhost' for table 'innodb_index_stats'"
+  }
+}

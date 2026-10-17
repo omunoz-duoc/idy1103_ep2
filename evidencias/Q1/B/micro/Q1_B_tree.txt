@@ -1,0 +1,5 @@
+-> Limit: 50 row(s)  (cost=73.9 rows=50)
+    -> Sort: o.order_ts DESC, o.order_id DESC, limit input to 50 row(s) per chunk  (cost=73.9 rows=992)
+        -> Filter: ((o.`status` = 'CREATED') and (o.order_ts >= <cache>((@long_start_ts))) and (o.order_ts < <cache>((@end_ts))))  (cost=73.9 rows=992)
+            -> Index lookup on o using fk_orders_store (store_id=(@store_id))  (cost=73.9 rows=992)
+

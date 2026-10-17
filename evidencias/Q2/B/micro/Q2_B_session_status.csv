@@ -1,0 +1,10 @@
+metric,before,after,delta
+Handler_read_key,255,285,30
+Handler_read_next,60,60,0
+Handler_read_rnd_next,45369,495399,450030
+Created_tmp_tables,1,1,0
+Created_tmp_disk_tables,1,1,0
+Sort_rows,19,19,0
+Sort_merge_passes,0,0,0
+Select_scan,5,35,30
+Select_full_join,1,1,0

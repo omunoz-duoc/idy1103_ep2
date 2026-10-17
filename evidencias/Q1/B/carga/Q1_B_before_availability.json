@@ -1,0 +1,22 @@
+{
+  "timestamp": {
+    "available": true,
+    "rows": 1
+  },
+  "global_status": {
+    "available": true,
+    "rows": 16
+  },
+  "index_io": {
+    "available": false,
+    "reason": "ProgrammingError: 1142 (42000): SELECT command denied to user 'ep2_runner'@'localhost' for table 'table_io_waits_summary_by_index_usage'"
+  },
+  "lock_waits": {
+    "available": false,
+    "reason": "ProgrammingError: 1142 (42000): SELECT command denied to user 'ep2_runner'@'localhost' for table 'data_lock_waits'"
+  },
+  "connections": {
+    "available": true,
+    "rows": 2
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "case": "Q5",
+  "stage": "C",
+  "iterations": 30,
+  "warmups": 2,
+  "rows_returned": 6,
+  "sha256": "837a1de4c261df7e5c0112efd25561ed973f0c546942fd9c8e58a017b6fb575e",
+  "min_ms": 2.933337,
+  "mean_ms": 3.0830806666666666,
+  "median_ms": 3.0634655000000004,
+  "p95_ms_nearest_rank": 3.477589,
+  "max_ms": 3.497894,
+  "population_stdev_ms": 0.12877903902947702
+}

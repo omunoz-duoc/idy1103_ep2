@@ -1,0 +1,14 @@
+{
+  "case": "Q4",
+  "stage": "A",
+  "iterations": 30,
+  "warmups": 2,
+  "rows_returned": 118,
+  "sha256": "9673860e99da2375f94a66af075aa2e3811ec991201b04fbe9e37c2e13e2a916",
+  "min_ms": 2.387444,
+  "mean_ms": 2.6686830666666665,
+  "median_ms": 2.6183795,
+  "p95_ms_nearest_rank": 3.012867,
+  "max_ms": 3.763689,
+  "population_stdev_ms": 0.2565139924354918
+}

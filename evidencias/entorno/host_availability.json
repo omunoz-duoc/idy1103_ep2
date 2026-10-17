@@ -1,0 +1,44 @@
+{
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "collected_at": "2026-10-16T22:06:10.045993-03:00",
+  "kernel": {
+    "available": true,
+    "exit_code": 0
+  },
+  "cpu": {
+    "available": true,
+    "exit_code": 0
+  },
+  "ram": {
+    "available": true,
+    "exit_code": 0
+  },
+  "disks": {
+    "available": true,
+    "exit_code": 0
+  },
+  "filesystems": {
+    "available": true,
+    "exit_code": 0
+  },
+  "mysql_process": {
+    "available": true,
+    "exit_code": 0
+  },
+  "collector_cgroup_memory_max": {
+    "available": false,
+    "reason": "[Errno 2] No such file or directory: '/sys/fs/cgroup/memory.max'"
+  },
+  "collector_cgroup_cpu_max": {
+    "available": false,
+    "reason": "[Errno 2] No such file or directory: '/sys/fs/cgroup/cpu.max'"
+  },
+  "mysql_limits": {
+    "available": true,
+    "source": "/proc/416/limits"
+  },
+  "mysql_cgroup": {
+    "available": true,
+    "source": "/proc/416/cgroup"
+  }
+}

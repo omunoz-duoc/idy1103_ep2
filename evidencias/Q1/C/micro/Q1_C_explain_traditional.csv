@@ -1,0 +1,2 @@
+id,select_type,table,partitions,type,possible_keys,key,key_len,ref,rows,filtered,Extra
+1,SIMPLE,o,NULL,range,"fk_orders_store,idx_ep2_q1_store_status_ts",idx_ep2_q1_store_status_ts,95,NULL,168,100.0,Using index condition

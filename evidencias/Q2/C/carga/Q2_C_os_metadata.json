@@ -1,0 +1,64 @@
+{
+  "scope": "Proceso MySQL completo durante el lote; puede incluir otras sesiones.",
+  "started_at": "2026-10-16T22:09:49.897525-03:00",
+  "ended_at": "2026-10-16T22:09:55.666021-03:00",
+  "batch_elapsed_seconds": 5.768469374976121,
+  "sample_interval_seconds": 1,
+  "monitor_with_sudo": true,
+  "sudo_refresh_errors": [],
+  "sample_edges": "pidstat incluye hasta un intervalo posterior al lote; usar timestamps.",
+  "pidstat_running_at_batch_end": true,
+  "same_process_at_end": true,
+  "batch_succeeded": true,
+  "short_batch": false,
+  "cpu_seconds": 2.77,
+  "cpu_percent_one_core": 48.019670729576625,
+  "disk_io_delta_bytes": {
+    "read_bytes": 0,
+    "write_bytes": 0,
+    "cancelled_write_bytes": 0
+  },
+  "before": {
+    "pid": 416,
+    "process_name": "mysqld",
+    "start_ticks": 311,
+    "cpu_ticks": 455170,
+    "clock_ticks_per_second": 100,
+    "rss_kib": 522624,
+    "io": {
+      "rchar": 84978114,
+      "wchar": 496101753,
+      "syscr": 189298,
+      "syscw": 87235,
+      "read_bytes": 168648704,
+      "write_bytes": 1699672064,
+      "cancelled_write_bytes": 18878464
+    },
+    "io_error": null
+  },
+  "after": {
+    "pid": 416,
+    "process_name": "mysqld",
+    "start_ticks": 311,
+    "cpu_ticks": 455447,
+    "clock_ticks_per_second": 100,
+    "rss_kib": 522624,
+    "io": {
+      "rchar": 87428610,
+      "wchar": 498562632,
+      "syscr": 219304,
+      "syscw": 97237,
+      "read_bytes": 168648704,
+      "write_bytes": 1699672064,
+      "cancelled_write_bytes": 18878464
+    },
+    "io_error": null
+  },
+  "limitations": [
+    "CPU e I/O corresponden al proceso completo, no exclusivamente a una sentencia.",
+    "El lote incluye transferencia, checksum del cliente y snapshots de sesión.",
+    "RSS inicial/final y muestras pidstat no representan memoria exclusiva de la consulta.",
+    "I/O físico puede ser cero por caché; null significa falta de permisos/datos.",
+    "La resolución de CPU está limitada por los ticks del sistema operativo."
+  ]
+}

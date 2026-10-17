@@ -1,0 +1,64 @@
+{
+  "scope": "Proceso MySQL completo durante el lote; puede incluir otras sesiones.",
+  "started_at": "2026-10-16T22:10:17.838264-03:00",
+  "ended_at": "2026-10-16T22:12:42.464889-03:00",
+  "batch_elapsed_seconds": 144.62659547501244,
+  "sample_interval_seconds": 1,
+  "monitor_with_sudo": true,
+  "sudo_refresh_errors": [],
+  "sample_edges": "pidstat incluye hasta un intervalo posterior al lote; usar timestamps.",
+  "pidstat_running_at_batch_end": true,
+  "same_process_at_end": true,
+  "batch_succeeded": true,
+  "short_batch": false,
+  "cpu_seconds": 138.72,
+  "cpu_percent_one_core": 95.91596866702643,
+  "disk_io_delta_bytes": {
+    "read_bytes": 0,
+    "write_bytes": 634880,
+    "cancelled_write_bytes": 0
+  },
+  "before": {
+    "pid": 416,
+    "process_name": "mysqld",
+    "start_ticks": 311,
+    "cpu_ticks": 455515,
+    "clock_ticks_per_second": 100,
+    "rss_kib": 523376,
+    "io": {
+      "rchar": 87462457,
+      "wchar": 499927019,
+      "syscr": 219651,
+      "syscw": 97396,
+      "read_bytes": 168648704,
+      "write_bytes": 1702424576,
+      "cancelled_write_bytes": 18944000
+    },
+    "io_error": null
+  },
+  "after": {
+    "pid": 416,
+    "process_name": "mysqld",
+    "start_ticks": 311,
+    "cpu_ticks": 469387,
+    "clock_ticks_per_second": 100,
+    "rss_kib": 523376,
+    "io": {
+      "rchar": 91492953,
+      "wchar": 507274374,
+      "syscr": 249657,
+      "syscw": 107406,
+      "read_bytes": 168648704,
+      "write_bytes": 1703059456,
+      "cancelled_write_bytes": 18944000
+    },
+    "io_error": null
+  },
+  "limitations": [
+    "CPU e I/O corresponden al proceso completo, no exclusivamente a una sentencia.",
+    "El lote incluye transferencia, checksum del cliente y snapshots de sesión.",
+    "RSS inicial/final y muestras pidstat no representan memoria exclusiva de la consulta.",
+    "I/O físico puede ser cero por caché; null significa falta de permisos/datos.",
+    "La resolución de CPU está limitada por los ticks del sistema operativo."
+  ]
+}

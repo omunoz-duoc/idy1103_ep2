@@ -1,0 +1,4 @@
+-> Group aggregate: count(0), sum(p.amount), avg(p.amount)  (cost=1425 rows=123)
+    -> Filter: ((p.method = <cache>((@method))) and (p.paid_ts >= <cache>((@start_ts))) and (p.paid_ts < <cache>((@end_ts))))  (cost=1409 rows=169)
+        -> Table scan on p  (cost=1409 rows=15194)
+

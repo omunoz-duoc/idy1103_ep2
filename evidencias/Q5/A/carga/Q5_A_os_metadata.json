@@ -1,0 +1,64 @@
+{
+  "scope": "Proceso MySQL completo durante el lote; puede incluir otras sesiones.",
+  "started_at": "2026-10-16T22:21:15.239793-03:00",
+  "ended_at": "2026-10-16T22:22:03.631393-03:00",
+  "batch_elapsed_seconds": 48.3915713459719,
+  "sample_interval_seconds": 1,
+  "monitor_with_sudo": true,
+  "sudo_refresh_errors": [],
+  "sample_edges": "pidstat incluye hasta un intervalo posterior al lote; usar timestamps.",
+  "pidstat_running_at_batch_end": true,
+  "same_process_at_end": true,
+  "batch_succeeded": true,
+  "short_batch": false,
+  "cpu_seconds": 44.32,
+  "cpu_percent_one_core": 91.58619728038484,
+  "disk_io_delta_bytes": {
+    "read_bytes": 0,
+    "write_bytes": 0,
+    "cancelled_write_bytes": 0
+  },
+  "before": {
+    "pid": 416,
+    "process_name": "mysqld",
+    "start_ticks": 311,
+    "cpu_ticks": 503097,
+    "clock_ticks_per_second": 100,
+    "rss_kib": 523788,
+    "io": {
+      "rchar": 113693208,
+      "wchar": 675563213,
+      "syscr": 401875,
+      "syscw": 158574,
+      "read_bytes": 168665088,
+      "write_bytes": 1722544128,
+      "cancelled_write_bytes": 19337216
+    },
+    "io_error": null
+  },
+  "after": {
+    "pid": 416,
+    "process_name": "mysqld",
+    "start_ticks": 311,
+    "cpu_ticks": 507529,
+    "clock_ticks_per_second": 100,
+    "rss_kib": 523788,
+    "io": {
+      "rchar": 117953704,
+      "wchar": 679984112,
+      "syscr": 431881,
+      "syscw": 168576,
+      "read_bytes": 168665088,
+      "write_bytes": 1722544128,
+      "cancelled_write_bytes": 19337216
+    },
+    "io_error": null
+  },
+  "limitations": [
+    "CPU e I/O corresponden al proceso completo, no exclusivamente a una sentencia.",
+    "El lote incluye transferencia, checksum del cliente y snapshots de sesión.",
+    "RSS inicial/final y muestras pidstat no representan memoria exclusiva de la consulta.",
+    "I/O físico puede ser cero por caché; null significa falta de permisos/datos.",
+    "La resolución de CPU está limitada por los ticks del sistema operativo."
+  ]
+}

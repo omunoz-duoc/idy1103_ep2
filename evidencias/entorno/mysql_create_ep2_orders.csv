@@ -1,0 +1,14 @@
+Table,Create Table
+ep2_orders,"CREATE TABLE `ep2_orders` (
+  `order_id` bigint NOT NULL AUTO_INCREMENT,
+  `customer_id` bigint NOT NULL,
+  `store_id` bigint NOT NULL,
+  `order_ts` datetime NOT NULL,
+  `status` varchar(20) NOT NULL,
+  `total_amount` decimal(12,2) NOT NULL DEFAULT '0.00',
+  PRIMARY KEY (`order_id`),
+  KEY `fk_orders_store` (`store_id`),
+  KEY `fk_orders_customer` (`customer_id`),
+  CONSTRAINT `fk_orders_customer` FOREIGN KEY (`customer_id`) REFERENCES `ep2_customers` (`customer_id`),
+  CONSTRAINT `fk_orders_store` FOREIGN KEY (`store_id`) REFERENCES `ep2_stores` (`store_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=32768 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci"

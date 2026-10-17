@@ -1,0 +1,16 @@
+Monitoreando PID 416; intervalo 1 s.
+{
+  "case": "Q1",
+  "stage": "B",
+  "iterations": 10000,
+  "warmups": 2,
+  "rows_returned": 50,
+  "sha256": "287694d698a6858bdeb86dcc7a0fc34eefcfbb876cece0fde5b93e89d4f772a4",
+  "min_ms": 0.931357,
+  "mean_ms": 1.1101867697,
+  "median_ms": 1.0834994999999998,
+  "p95_ms_nearest_rank": 1.273667,
+  "max_ms": 3.669528,
+  "population_stdev_ms": 0.12294896216936628
+}
+Evidence written to /home/aframuz/code/mvmv/duoc/6to_semestre/admin_base_datos/evaluacion_02/evidencias/Q1/B/carga

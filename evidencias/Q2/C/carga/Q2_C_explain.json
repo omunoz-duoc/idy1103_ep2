@@ -1,0 +1,40 @@
+{
+  "query_block": {
+    "select_id": 1,
+    "cost_info": {
+      "query_cost": "69.62"
+    },
+    "grouping_operation": {
+      "using_filesort": false,
+      "table": {
+        "table_name": "p",
+        "access_type": "range",
+        "possible_keys": [
+          "idx_ep2_q2_method_ts_amount"
+        ],
+        "key": "idx_ep2_q2_method_ts_amount",
+        "used_key_parts": [
+          "method",
+          "paid_ts"
+        ],
+        "key_length": "87",
+        "rows_examined_per_scan": 324,
+        "rows_produced_per_join": 324,
+        "filtered": "100.00",
+        "using_index": true,
+        "cost_info": {
+          "read_cost": "37.22",
+          "eval_cost": "32.40",
+          "prefix_cost": "69.62",
+          "data_read_per_join": "35K"
+        },
+        "used_columns": [
+          "paid_ts",
+          "method",
+          "amount"
+        ],
+        "attached_condition": "((`ep2_lab`.`p`.`method` = <cache>((@`method`))) and (`ep2_lab`.`p`.`paid_ts` >= <cache>((@`start_ts`))) and (`ep2_lab`.`p`.`paid_ts` < <cache>((@`end_ts`))))"
+      }
+    }
+  }
+}

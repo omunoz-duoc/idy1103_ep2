@@ -1,0 +1,144 @@
+# Cobertura de la recolección
+
+Los archivos availability.json indican disponibilidad; sin permisos no significa cero.
+
+- `Q1/A/carga/Q1_A_after_availability.json`: no disponible index_io, lock_waits.
+- `Q1/A/carga/Q1_A_before_availability.json`: no disponible index_io, lock_waits.
+- `Q1/A/carga/Q1_A_sizes_availability.json`: no disponible index_pages.
+- `Q1/A/micro/Q1_A_after_availability.json`: no disponible index_io, lock_waits.
+- `Q1/A/micro/Q1_A_before_availability.json`: no disponible index_io, lock_waits.
+- `Q1/A/micro/Q1_A_sizes_availability.json`: no disponible index_pages.
+- `Q1/B/carga/Q1_B_after_availability.json`: no disponible index_io, lock_waits.
+- `Q1/B/carga/Q1_B_before_availability.json`: no disponible index_io, lock_waits.
+- `Q1/B/carga/Q1_B_sizes_availability.json`: no disponible index_pages.
+- `Q1/B/micro/Q1_B_after_availability.json`: no disponible index_io, lock_waits.
+- `Q1/B/micro/Q1_B_before_availability.json`: no disponible index_io, lock_waits.
+- `Q1/B/micro/Q1_B_sizes_availability.json`: no disponible index_pages.
+- `Q1/C/before_availability.json`: no disponible index_pages.
+- `Q1/C/carga/Q1_C_after_availability.json`: no disponible index_io, lock_waits.
+- `Q1/C/carga/Q1_C_before_availability.json`: no disponible index_io, lock_waits.
+- `Q1/C/carga/Q1_C_sizes_availability.json`: no disponible index_pages.
+- `Q1/C/micro/Q1_C_after_availability.json`: no disponible index_io, lock_waits.
+- `Q1/C/micro/Q1_C_before_availability.json`: no disponible index_io, lock_waits.
+- `Q1/C/micro/Q1_C_sizes_availability.json`: no disponible index_pages.
+- `Q1/C/with_experiment_availability.json`: no disponible index_pages.
+- `Q2/A/carga/Q2_A_after_availability.json`: no disponible index_io, lock_waits.
+- `Q2/A/carga/Q2_A_before_availability.json`: no disponible index_io, lock_waits.
+- `Q2/A/carga/Q2_A_sizes_availability.json`: no disponible index_pages.
+- `Q2/A/micro/Q2_A_after_availability.json`: no disponible index_io, lock_waits.
+- `Q2/A/micro/Q2_A_before_availability.json`: no disponible index_io, lock_waits.
+- `Q2/A/micro/Q2_A_sizes_availability.json`: no disponible index_pages.
+- `Q2/B/carga/Q2_B_after_availability.json`: no disponible index_io, lock_waits.
+- `Q2/B/carga/Q2_B_before_availability.json`: no disponible index_io, lock_waits.
+- `Q2/B/carga/Q2_B_sizes_availability.json`: no disponible index_pages.
+- `Q2/B/micro/Q2_B_after_availability.json`: no disponible index_io, lock_waits.
+- `Q2/B/micro/Q2_B_before_availability.json`: no disponible index_io, lock_waits.
+- `Q2/B/micro/Q2_B_sizes_availability.json`: no disponible index_pages.
+- `Q2/C/before_availability.json`: no disponible index_pages.
+- `Q2/C/carga/Q2_C_after_availability.json`: no disponible index_io, lock_waits.
+- `Q2/C/carga/Q2_C_before_availability.json`: no disponible index_io, lock_waits.
+- `Q2/C/carga/Q2_C_sizes_availability.json`: no disponible index_pages.
+- `Q2/C/micro/Q2_C_after_availability.json`: no disponible index_io, lock_waits.
+- `Q2/C/micro/Q2_C_before_availability.json`: no disponible index_io, lock_waits.
+- `Q2/C/micro/Q2_C_sizes_availability.json`: no disponible index_pages.
+- `Q2/C/with_experiment_availability.json`: no disponible index_pages.
+- `Q3/A/carga/Q3_A_after_availability.json`: no disponible index_io, lock_waits.
+- `Q3/A/carga/Q3_A_before_availability.json`: no disponible index_io, lock_waits.
+- `Q3/A/carga/Q3_A_sizes_availability.json`: no disponible index_pages.
+- `Q3/A/micro/Q3_A_after_availability.json`: no disponible index_io, lock_waits.
+- `Q3/A/micro/Q3_A_before_availability.json`: no disponible index_io, lock_waits.
+- `Q3/A/micro/Q3_A_sizes_availability.json`: no disponible index_pages.
+- `Q3/B/carga/Q3_B_after_availability.json`: no disponible index_io, lock_waits.
+- `Q3/B/carga/Q3_B_before_availability.json`: no disponible index_io, lock_waits.
+- `Q3/B/carga/Q3_B_sizes_availability.json`: no disponible index_pages.
+- `Q3/B/micro/Q3_B_after_availability.json`: no disponible index_io, lock_waits.
+- `Q3/B/micro/Q3_B_before_availability.json`: no disponible index_io, lock_waits.
+- `Q3/B/micro/Q3_B_sizes_availability.json`: no disponible index_pages.
+- `Q3/C/before_availability.json`: no disponible index_pages.
+- `Q3/C/carga/Q3_C_after_availability.json`: no disponible index_io, lock_waits.
+- `Q3/C/carga/Q3_C_before_availability.json`: no disponible index_io, lock_waits.
+- `Q3/C/carga/Q3_C_sizes_availability.json`: no disponible index_pages.
+- `Q3/C/micro/Q3_C_after_availability.json`: no disponible index_io, lock_waits.
+- `Q3/C/micro/Q3_C_before_availability.json`: no disponible index_io, lock_waits.
+- `Q3/C/micro/Q3_C_sizes_availability.json`: no disponible index_pages.
+- `Q3/C/with_experiment_availability.json`: no disponible index_pages.
+- `Q4/A/carga/Q4_A_after_availability.json`: no disponible index_io, lock_waits.
+- `Q4/A/carga/Q4_A_before_availability.json`: no disponible index_io, lock_waits.
+- `Q4/A/carga/Q4_A_sizes_availability.json`: no disponible index_pages.
+- `Q4/A/micro/Q4_A_after_availability.json`: no disponible index_io, lock_waits.
+- `Q4/A/micro/Q4_A_before_availability.json`: no disponible index_io, lock_waits.
+- `Q4/A/micro/Q4_A_sizes_availability.json`: no disponible index_pages.
+- `Q4/B/carga/Q4_B_after_availability.json`: no disponible index_io, lock_waits.
+- `Q4/B/carga/Q4_B_before_availability.json`: no disponible index_io, lock_waits.
+- `Q4/B/carga/Q4_B_sizes_availability.json`: no disponible index_pages.
+- `Q4/B/micro/Q4_B_after_availability.json`: no disponible index_io, lock_waits.
+- `Q4/B/micro/Q4_B_before_availability.json`: no disponible index_io, lock_waits.
+- `Q4/B/micro/Q4_B_sizes_availability.json`: no disponible index_pages.
+- `Q4/C/before_availability.json`: no disponible index_pages.
+- `Q4/C/carga/Q4_C_after_availability.json`: no disponible index_io, lock_waits.
+- `Q4/C/carga/Q4_C_before_availability.json`: no disponible index_io, lock_waits.
+- `Q4/C/carga/Q4_C_sizes_availability.json`: no disponible index_pages.
+- `Q4/C/micro/Q4_C_after_availability.json`: no disponible index_io, lock_waits.
+- `Q4/C/micro/Q4_C_before_availability.json`: no disponible index_io, lock_waits.
+- `Q4/C/micro/Q4_C_sizes_availability.json`: no disponible index_pages.
+- `Q4/C/with_experiment_availability.json`: no disponible index_pages.
+- `Q5/A/carga/Q5_A_after_availability.json`: no disponible index_io, lock_waits.
+- `Q5/A/carga/Q5_A_before_availability.json`: no disponible index_io, lock_waits.
+- `Q5/A/carga/Q5_A_sizes_availability.json`: no disponible index_pages.
+- `Q5/A/micro/Q5_A_after_availability.json`: no disponible index_io, lock_waits.
+- `Q5/A/micro/Q5_A_before_availability.json`: no disponible index_io, lock_waits.
+- `Q5/A/micro/Q5_A_sizes_availability.json`: no disponible index_pages.
+- `Q5/B/carga/Q5_B_after_availability.json`: no disponible index_io, lock_waits.
+- `Q5/B/carga/Q5_B_before_availability.json`: no disponible index_io, lock_waits.
+- `Q5/B/carga/Q5_B_sizes_availability.json`: no disponible index_pages.
+- `Q5/B/micro/Q5_B_after_availability.json`: no disponible index_io, lock_waits.
+- `Q5/B/micro/Q5_B_before_availability.json`: no disponible index_io, lock_waits.
+- `Q5/B/micro/Q5_B_sizes_availability.json`: no disponible index_pages.
+- `Q5/C/before_availability.json`: no disponible index_pages.
+- `Q5/C/carga/Q5_C_after_availability.json`: no disponible index_io, lock_waits.
+- `Q5/C/carga/Q5_C_before_availability.json`: no disponible index_io, lock_waits.
+- `Q5/C/carga/Q5_C_sizes_availability.json`: no disponible index_pages.
+- `Q5/C/micro/Q5_C_after_availability.json`: no disponible index_io, lock_waits.
+- `Q5/C/micro/Q5_C_before_availability.json`: no disponible index_io, lock_waits.
+- `Q5/C/micro/Q5_C_sizes_availability.json`: no disponible index_pages.
+- `Q5/C/with_experiment_availability.json`: no disponible index_pages.
+- `entorno/host_availability.json`: no disponible collector_cgroup_memory_max, collector_cgroup_cpu_max.
+- `entorno/mysql_availability.json`: no disponible consumers, instruments.
+- `Q1/A/carga/Q1_A_performance_schema.status.json`: 1142 (42000): SELECT command denied to user 'ep2_runner'@'localhost' for table 'threads'.
+- `Q1/A/micro/Q1_A_performance_schema.status.json`: 1142 (42000): SELECT command denied to user 'ep2_runner'@'localhost' for table 'threads'.
+- `Q1/B/carga/Q1_B_performance_schema.status.json`: 1142 (42000): SELECT command denied to user 'ep2_runner'@'localhost' for table 'threads'.
+- `Q1/B/micro/Q1_B_performance_schema.status.json`: 1142 (42000): SELECT command denied to user 'ep2_runner'@'localhost' for table 'threads'.
+- `Q1/C/carga/Q1_C_performance_schema.status.json`: 1142 (42000): SELECT command denied to user 'ep2_runner'@'localhost' for table 'threads'.
+- `Q1/C/micro/Q1_C_performance_schema.status.json`: 1142 (42000): SELECT command denied to user 'ep2_runner'@'localhost' for table 'threads'.
+- `Q2/A/carga/Q2_A_performance_schema.status.json`: 1142 (42000): SELECT command denied to user 'ep2_runner'@'localhost' for table 'threads'.
+- `Q2/A/micro/Q2_A_performance_schema.status.json`: 1142 (42000): SELECT command denied to user 'ep2_runner'@'localhost' for table 'threads'.
+- `Q2/B/carga/Q2_B_performance_schema.status.json`: 1142 (42000): SELECT command denied to user 'ep2_runner'@'localhost' for table 'threads'.
+- `Q2/B/micro/Q2_B_performance_schema.status.json`: 1142 (42000): SELECT command denied to user 'ep2_runner'@'localhost' for table 'threads'.
+- `Q2/C/carga/Q2_C_performance_schema.status.json`: 1142 (42000): SELECT command denied to user 'ep2_runner'@'localhost' for table 'threads'.
+- `Q2/C/micro/Q2_C_performance_schema.status.json`: 1142 (42000): SELECT command denied to user 'ep2_runner'@'localhost' for table 'threads'.
+- `Q3/A/carga/Q3_A_performance_schema.status.json`: 1142 (42000): SELECT command denied to user 'ep2_runner'@'localhost' for table 'threads'.
+- `Q3/A/micro/Q3_A_performance_schema.status.json`: 1142 (42000): SELECT command denied to user 'ep2_runner'@'localhost' for table 'threads'.
+- `Q3/B/carga/Q3_B_performance_schema.status.json`: 1142 (42000): SELECT command denied to user 'ep2_runner'@'localhost' for table 'threads'.
+- `Q3/B/micro/Q3_B_performance_schema.status.json`: 1142 (42000): SELECT command denied to user 'ep2_runner'@'localhost' for table 'threads'.
+- `Q3/C/carga/Q3_C_performance_schema.status.json`: 1142 (42000): SELECT command denied to user 'ep2_runner'@'localhost' for table 'threads'.
+- `Q3/C/micro/Q3_C_performance_schema.status.json`: 1142 (42000): SELECT command denied to user 'ep2_runner'@'localhost' for table 'threads'.
+- `Q4/A/carga/Q4_A_performance_schema.status.json`: 1142 (42000): SELECT command denied to user 'ep2_runner'@'localhost' for table 'threads'.
+- `Q4/A/micro/Q4_A_performance_schema.status.json`: 1142 (42000): SELECT command denied to user 'ep2_runner'@'localhost' for table 'threads'.
+- `Q4/B/carga/Q4_B_performance_schema.status.json`: 1142 (42000): SELECT command denied to user 'ep2_runner'@'localhost' for table 'threads'.
+- `Q4/B/micro/Q4_B_performance_schema.status.json`: 1142 (42000): SELECT command denied to user 'ep2_runner'@'localhost' for table 'threads'.
+- `Q4/C/carga/Q4_C_performance_schema.status.json`: 1142 (42000): SELECT command denied to user 'ep2_runner'@'localhost' for table 'threads'.
+- `Q4/C/micro/Q4_C_performance_schema.status.json`: 1142 (42000): SELECT command denied to user 'ep2_runner'@'localhost' for table 'threads'.
+- `Q5/A/carga/Q5_A_performance_schema.status.json`: 1142 (42000): SELECT command denied to user 'ep2_runner'@'localhost' for table 'threads'.
+- `Q5/A/micro/Q5_A_performance_schema.status.json`: 1142 (42000): SELECT command denied to user 'ep2_runner'@'localhost' for table 'threads'.
+- `Q5/B/carga/Q5_B_performance_schema.status.json`: 1142 (42000): SELECT command denied to user 'ep2_runner'@'localhost' for table 'threads'.
+- `Q5/B/micro/Q5_B_performance_schema.status.json`: 1142 (42000): SELECT command denied to user 'ep2_runner'@'localhost' for table 'threads'.
+- `Q5/C/carga/Q5_C_performance_schema.status.json`: 1142 (42000): SELECT command denied to user 'ep2_runner'@'localhost' for table 'threads'.
+- `Q5/C/micro/Q5_C_performance_schema.status.json`: 1142 (42000): SELECT command denied to user 'ep2_runner'@'localhost' for table 'threads'.
+
+## Límites del experimento
+
+- Secuencia fija A/B/C y caché caliente; el cooldown no vacía el buffer pool.
+- Carga con un cliente secuencial; no demuestra escalabilidad concurrente.
+- Los snapshots globales y por índice pueden incluir otras sesiones y consultas de diagnóstico.
+- Las cifras de páginas de índices son estadísticas estimadas y pueden estar desactualizadas.
+- Los tiempos DDL incluyen red y estadísticas automáticas de creación del índice.

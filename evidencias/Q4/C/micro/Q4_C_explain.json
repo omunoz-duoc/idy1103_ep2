@@ -1,0 +1,81 @@
+{
+  "query_block": {
+    "select_id": 1,
+    "cost_info": {
+      "query_cost": "551.73"
+    },
+    "ordering_operation": {
+      "using_filesort": false,
+      "nested_loop": [
+        {
+          "table": {
+            "table_name": "c",
+            "access_type": "index",
+            "possible_keys": [
+              "PRIMARY"
+            ],
+            "key": "PRIMARY",
+            "used_key_parts": [
+              "customer_id"
+            ],
+            "key_length": "8",
+            "rows_examined_per_scan": 4883,
+            "rows_produced_per_join": 48,
+            "filtered": "1.00",
+            "cost_info": {
+              "read_cost": "490.67",
+              "eval_cost": "4.88",
+              "prefix_cost": "495.55",
+              "data_read_per_join": "71K"
+            },
+            "used_columns": [
+              "customer_id",
+              "full_name",
+              "city",
+              "segment"
+            ],
+            "attached_condition": "((`ep2_lab`.`c`.`segment` = <cache>((@`segment`))) and (`ep2_lab`.`c`.`city` = <cache>((@`city`))))"
+          }
+        },
+        {
+          "table": {
+            "table_name": "o",
+            "access_type": "ref",
+            "possible_keys": [
+              "fk_orders_customer",
+              "idx_ep2_q4_cust_status_ts"
+            ],
+            "key": "idx_ep2_q4_cust_status_ts",
+            "used_key_parts": [
+              "customer_id",
+              "status"
+            ],
+            "key_length": "90",
+            "ref": [
+              "ep2_lab.c.customer_id",
+              "const"
+            ],
+            "rows_examined_per_scan": 1,
+            "rows_produced_per_join": 48,
+            "filtered": "11.11",
+            "using_index": true,
+            "first_match": "c",
+            "cost_info": {
+              "read_cost": "48.34",
+              "eval_cost": "4.88",
+              "prefix_cost": "551.73",
+              "data_read_per_join": "5K"
+            },
+            "used_columns": [
+              "order_id",
+              "customer_id",
+              "order_ts",
+              "status"
+            ],
+            "attached_condition": "((`ep2_lab`.`o`.`order_ts` >= <cache>((@`long_start_ts`))) and (`ep2_lab`.`o`.`order_ts` < <cache>((@`end_ts`))))"
+          }
+        }
+      ]
+    }
+  }
+}

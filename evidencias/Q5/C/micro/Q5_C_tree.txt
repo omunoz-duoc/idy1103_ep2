@@ -1,0 +1,9 @@
+-> Sort: valor_pedidos DESC, s.store_id
+    -> Table scan on <temporary>
+        -> Aggregate using temporary table
+            -> Nested loop left join  (cost=233 rows=2028)
+                -> Filter: (s.region = <cache>((@region)))  (cost=2.25 rows=2)
+                    -> Table scan on s  (cost=2.25 rows=20)
+                -> Filter: ((o.order_ts >= <cache>((@long_start_ts))) and (o.order_ts < <cache>((@end_ts))) and (o.`status` <> 'CANCELLED'))  (cost=64.8 rows=1014)
+                    -> Covering index lookup on o using idx_ep2_q5_store_ts_status_total (store_id=s.store_id)  (cost=64.8 rows=1014)
+

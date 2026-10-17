@@ -1,0 +1,17 @@
+Variable_name,Value
+Created_tmp_disk_tables,68
+Created_tmp_tables,50814
+Innodb_buffer_pool_read_requests,1427866149
+Innodb_buffer_pool_reads,1618
+Innodb_data_read,27625984
+Innodb_data_reads,2128
+Innodb_data_writes,28475
+Innodb_data_written,201408000
+Innodb_os_log_written,68123648
+Innodb_row_lock_time,0
+Innodb_row_lock_waits,0
+Select_scan,91543
+Sort_rows,2254100
+Threads_connected,2
+Threads_running,2
+Uptime,1912472

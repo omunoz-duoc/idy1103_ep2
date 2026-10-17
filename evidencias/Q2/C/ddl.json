@@ -1,0 +1,9 @@
+{
+  "case": "Q2",
+  "sql": "CREATE INDEX idx_ep2_q2_method_ts_amount ON ep2_payments(method, paid_ts, amount)",
+  "created": true,
+  "cleanup_succeeded": true,
+  "create_elapsed_ms": 115.19722093362361,
+  "support_index_restored": false,
+  "cleanup_elapsed_ms": 15.922307968139648
+}

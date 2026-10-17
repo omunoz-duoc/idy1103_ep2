@@ -1,0 +1,11 @@
+-> Limit: 20 row(s)  (actual time=18.9..18.9 rows=20 loops=1)
+    -> Sort: unidades DESC, i.product_id, limit input to 20 row(s) per chunk  (actual time=18.9..18.9 rows=20 loops=1)
+        -> Table scan on <temporary>  (actual time=18.6..18.7 rows=1896 loops=1)
+            -> Aggregate using temporary table  (actual time=18.6..18.6 rows=1896 loops=1)
+                -> Nested loop inner join  (cost=7045 rows=9451) (actual time=0.131..16.6 rows=5844 loops=1)
+                    -> Nested loop inner join  (cost=3737 rows=9451) (actual time=0.127..13.4 rows=5844 loops=1)
+                        -> Filter: ((o.order_ts >= <cache>((@start_ts))) and (o.order_ts < <cache>((@end_ts))) and (o.`status` <> 'CANCELLED'))  (cost=430 rows=2027) (actual time=0.0997..4.88 rows=1179 loops=1)
+                            -> Table scan on o  (cost=430 rows=20278) (actual time=0.0924..2.6 rows=20000 loops=1)
+                        -> Index lookup on i using fk_items_order (order_id=o.order_id)  (cost=1.17 rows=4.66) (actual time=0.00599..0.00701 rows=4.96 loops=1179)
+                    -> Single-row index lookup on p using PRIMARY (product_id=i.product_id)  (cost=0.25 rows=1) (actual time=450e-6..464e-6 rows=1 loops=5844)
+

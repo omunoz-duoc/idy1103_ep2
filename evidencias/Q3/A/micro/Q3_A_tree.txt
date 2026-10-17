@@ -1,0 +1,11 @@
+-> Limit: 20 row(s)
+    -> Sort: unidades DESC, i.product_id, limit input to 20 row(s) per chunk
+        -> Table scan on <temporary>
+            -> Aggregate using temporary table
+                -> Nested loop inner join  (cost=61603 rows=85072)
+                    -> Nested loop inner join  (cost=31827 rows=85072)
+                        -> Filter: ((cast(o.order_ts as date) >= <cache>(cast((@start_ts) as date))) and (cast(o.order_ts as date) < <cache>(cast((@end_ts) as date))) and (o.`status` <> 'CANCELLED'))  (cost=2052 rows=18250)
+                            -> Table scan on o  (cost=2052 rows=20278)
+                        -> Index lookup on i using fk_items_order (order_id=o.order_id)  (cost=1.17 rows=4.66)
+                    -> Single-row index lookup on p using PRIMARY (product_id=i.product_id)  (cost=0.25 rows=1)
+

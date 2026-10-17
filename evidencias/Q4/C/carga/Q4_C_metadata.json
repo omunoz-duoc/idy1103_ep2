@@ -1,0 +1,15 @@
+{
+  "collected_at_client": "2026-10-16T22:20:25.478038-03:00",
+  "mysql_version": "8.0.46-0ubuntu0.24.04.4",
+  "mysql_distribution": "(Ubuntu)",
+  "database": "ep2_lab",
+  "connection_id": 141,
+  "server_time": "2026-10-16 22:20:25",
+  "session_time_zone": "SYSTEM",
+  "host": "127.0.0.1",
+  "port": 3306,
+  "case": "Q4",
+  "stage": "C",
+  "warmups": 2,
+  "iterations": 10000
+}

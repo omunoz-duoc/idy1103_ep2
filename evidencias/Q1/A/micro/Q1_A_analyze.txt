@@ -1,0 +1,5 @@
+-> Limit: 50 row(s)  (cost=82.7 rows=50) (actual time=1.04..1.05 rows=50 loops=1)
+    -> Sort: o.order_ts DESC, o.order_id DESC, limit input to 50 row(s) per chunk  (cost=82.7 rows=992) (actual time=1.04..1.05 rows=50 loops=1)
+        -> Filter: ((o.`status` = 'CREATED') and (cast(o.order_ts as date) >= <cache>(cast((@long_start_ts) as date))) and (cast(o.order_ts as date) < <cache>(cast((@end_ts) as date))))  (cost=82.7 rows=992) (actual time=0.132..1.02 rows=168 loops=1)
+            -> Index lookup on o using fk_orders_store (store_id=(@store_id))  (cost=82.7 rows=992) (actual time=0.126..0.953 rows=992 loops=1)
+

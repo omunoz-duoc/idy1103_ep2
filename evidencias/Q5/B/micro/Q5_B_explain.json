@@ -1,0 +1,72 @@
+{
+  "query_block": {
+    "select_id": 1,
+    "cost_info": {
+      "query_cost": "350.53"
+    },
+    "ordering_operation": {
+      "using_filesort": true,
+      "grouping_operation": {
+        "using_temporary_table": true,
+        "using_filesort": false,
+        "nested_loop": [
+          {
+            "table": {
+              "table_name": "s",
+              "access_type": "ALL",
+              "rows_examined_per_scan": 20,
+              "rows_produced_per_join": 2,
+              "filtered": "10.00",
+              "cost_info": {
+                "read_cost": "2.05",
+                "eval_cost": "0.20",
+                "prefix_cost": "2.25",
+                "data_read_per_join": "992"
+              },
+              "used_columns": [
+                "store_id",
+                "store_name",
+                "region"
+              ],
+              "attached_condition": "(`ep2_lab`.`s`.`region` = <cache>((@`region`)))"
+            }
+          },
+          {
+            "table": {
+              "table_name": "o",
+              "access_type": "ref",
+              "possible_keys": [
+                "fk_orders_store"
+              ],
+              "key": "fk_orders_store",
+              "used_key_parts": [
+                "store_id"
+              ],
+              "key_length": "8",
+              "ref": [
+                "ep2_lab.s.store_id"
+              ],
+              "rows_examined_per_scan": 1013,
+              "rows_produced_per_join": 2027,
+              "filtered": "100.00",
+              "cost_info": {
+                "read_cost": "145.50",
+                "eval_cost": "202.78",
+                "prefix_cost": "350.53",
+                "data_read_per_join": "237K"
+              },
+              "used_columns": [
+                "order_id",
+                "store_id",
+                "order_ts",
+                "status",
+                "total_amount"
+              ],
+              "attached_condition": "<if>(is_not_null_compl(o), ((`ep2_lab`.`o`.`order_ts` >= <cache>((@`long_start_ts`))) and (`ep2_lab`.`o`.`order_ts` < <cache>((@`end_ts`))) and (`ep2_lab`.`o`.`status` <> 'CANCELLED')), true)"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

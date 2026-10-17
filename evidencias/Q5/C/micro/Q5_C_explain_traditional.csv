@@ -1,0 +1,3 @@
+id,select_type,table,partitions,type,possible_keys,key,key_len,ref,rows,filtered,Extra
+1,SIMPLE,s,NULL,ALL,NULL,NULL,NULL,NULL,20,10.0,Using where; Using temporary; Using filesort
+1,SIMPLE,o,NULL,ref,"fk_orders_store,idx_ep2_q5_store_ts_status_total",idx_ep2_q5_store_ts_status_total,8,ep2_lab.s.store_id,1013,100.0,Using where; Using index

@@ -1,0 +1,71 @@
+[2026-10-16T22:06:10.919532-03:00] Cooldown: 10 s (se conserva la caché de MySQL).
+[2026-10-16T22:06:20.920770-03:00] Q1/A/micro: 30 iteraciones
+[2026-10-16T22:06:21.083346-03:00] Cooldown: 10 s (se conserva la caché de MySQL).
+[2026-10-16T22:06:31.084293-03:00] Q1/A/carga: 10000 iteraciones
+[2026-10-16T22:06:45.826161-03:00] Cooldown: 10 s (se conserva la caché de MySQL).
+[2026-10-16T22:06:55.827049-03:00] Q1/B/micro: 30 iteraciones
+[2026-10-16T22:06:55.973340-03:00] Cooldown: 10 s (se conserva la caché de MySQL).
+[2026-10-16T22:07:05.974100-03:00] Q1/B/carga: 10000 iteraciones
+[2026-10-16T22:07:20.930209-03:00] Q1/C: creando idx_ep2_q1_store_status_ts
+[2026-10-16T22:07:21.106147-03:00] Cooldown: 10 s (se conserva la caché de MySQL).
+[2026-10-16T22:07:31.106970-03:00] Q1/C/micro: 30 iteraciones
+[2026-10-16T22:07:31.242617-03:00] Cooldown: 10 s (se conserva la caché de MySQL).
+[2026-10-16T22:07:41.243320-03:00] Q1/C/carga: 10000 iteraciones
+[2026-10-16T22:07:51.038021-03:00] Q1: A/B/C completados con resultados equivalentes
+[2026-10-16T22:07:51.041152-03:00] Cooldown: 10 s (se conserva la caché de MySQL).
+[2026-10-16T22:08:01.042087-03:00] Q2/A/micro: 30 iteraciones
+[2026-10-16T22:08:01.261170-03:00] Cooldown: 10 s (se conserva la caché de MySQL).
+[2026-10-16T22:08:11.261969-03:00] Q2/A/carga: 10000 iteraciones
+[2026-10-16T22:08:38.167821-03:00] Cooldown: 10 s (se conserva la caché de MySQL).
+[2026-10-16T22:08:48.168591-03:00] Q2/B/micro: 30 iteraciones
+[2026-10-16T22:08:48.368032-03:00] Cooldown: 10 s (se conserva la caché de MySQL).
+[2026-10-16T22:08:58.368787-03:00] Q2/B/carga: 10000 iteraciones
+[2026-10-16T22:09:29.389815-03:00] Q2/C: creando idx_ep2_q2_method_ts_amount
+[2026-10-16T22:09:29.513347-03:00] Cooldown: 10 s (se conserva la caché de MySQL).
+[2026-10-16T22:09:39.514373-03:00] Q2/C/micro: 30 iteraciones
+[2026-10-16T22:09:39.630255-03:00] Cooldown: 10 s (se conserva la caché de MySQL).
+[2026-10-16T22:09:49.631059-03:00] Q2/C/carga: 10000 iteraciones
+[2026-10-16T22:09:56.892168-03:00] Q2: A/B/C completados con resultados equivalentes
+[2026-10-16T22:09:56.895793-03:00] Cooldown: 10 s (se conserva la caché de MySQL).
+[2026-10-16T22:10:06.904675-03:00] Q3/A/micro: 30 iteraciones
+[2026-10-16T22:10:07.519336-03:00] Cooldown: 10 s (se conserva la caché de MySQL).
+[2026-10-16T22:10:17.520154-03:00] Q3/A/carga: 10000 iteraciones
+[2026-10-16T22:12:43.676243-03:00] Cooldown: 10 s (se conserva la caché de MySQL).
+[2026-10-16T22:12:53.677335-03:00] Q3/B/micro: 30 iteraciones
+[2026-10-16T22:12:54.306688-03:00] Cooldown: 10 s (se conserva la caché de MySQL).
+[2026-10-16T22:13:04.307412-03:00] Q3/B/carga: 10000 iteraciones
+[2026-10-16T22:15:47.290498-03:00] Q3/C: creando idx_ep2_q3_order_ts
+[2026-10-16T22:15:47.373715-03:00] Cooldown: 10 s (se conserva la caché de MySQL).
+[2026-10-16T22:15:57.375716-03:00] Q3/C/micro: 30 iteraciones
+[2026-10-16T22:15:57.985194-03:00] Cooldown: 10 s (se conserva la caché de MySQL).
+[2026-10-16T22:16:07.987325-03:00] Q3/C/carga: 10000 iteraciones
+[2026-10-16T22:18:19.393743-03:00] Q3: A/B/C completados con resultados equivalentes
+[2026-10-16T22:18:19.397227-03:00] Cooldown: 10 s (se conserva la caché de MySQL).
+[2026-10-16T22:18:29.398134-03:00] Q4/A/micro: 30 iteraciones
+[2026-10-16T22:18:29.612698-03:00] Cooldown: 10 s (se conserva la caché de MySQL).
+[2026-10-16T22:18:39.613357-03:00] Q4/A/carga: 10000 iteraciones
+[2026-10-16T22:19:12.811466-03:00] Cooldown: 10 s (se conserva la caché de MySQL).
+[2026-10-16T22:19:22.812473-03:00] Q4/B/micro: 30 iteraciones
+[2026-10-16T22:19:23.051612-03:00] Cooldown: 10 s (se conserva la caché de MySQL).
+[2026-10-16T22:19:33.052656-03:00] Q4/B/carga: 10000 iteraciones
+[2026-10-16T22:20:05.065478-03:00] Q4/C: creando idx_ep2_q4_cust_status_ts
+[2026-10-16T22:20:05.213069-03:00] Cooldown: 10 s (se conserva la caché de MySQL).
+[2026-10-16T22:20:15.214895-03:00] Q4/C/micro: 30 iteraciones
+[2026-10-16T22:20:15.399854-03:00] Cooldown: 10 s (se conserva la caché de MySQL).
+[2026-10-16T22:20:25.401258-03:00] Q4/C/carga: 10000 iteraciones
+[2026-10-16T22:20:54.683365-03:00] Q4: A/B/C completados con resultados equivalentes
+[2026-10-16T22:20:54.687164-03:00] Cooldown: 10 s (se conserva la caché de MySQL).
+[2026-10-16T22:21:04.687745-03:00] Q5/A/micro: 30 iteraciones
+[2026-10-16T22:21:04.955836-03:00] Cooldown: 10 s (se conserva la caché de MySQL).
+[2026-10-16T22:21:14.956630-03:00] Q5/A/carga: 10000 iteraciones
+[2026-10-16T22:22:04.839627-03:00] Cooldown: 10 s (se conserva la caché de MySQL).
+[2026-10-16T22:22:14.840341-03:00] Q5/B/micro: 30 iteraciones
+[2026-10-16T22:22:15.137071-03:00] Cooldown: 10 s (se conserva la caché de MySQL).
+[2026-10-16T22:22:25.138171-03:00] Q5/B/carga: 10000 iteraciones
+[2026-10-16T22:23:21.572454-03:00] Q5/C: creando idx_ep2_q5_store_ts_status_total
+[2026-10-16T22:23:21.720617-03:00] Cooldown: 10 s (se conserva la caché de MySQL).
+[2026-10-16T22:23:31.728568-03:00] Q5/C/micro: 30 iteraciones
+[2026-10-16T22:23:31.936769-03:00] Cooldown: 10 s (se conserva la caché de MySQL).
+[2026-10-16T22:23:41.937709-03:00] Q5/C/carga: 10000 iteraciones
+[2026-10-16T22:24:19.789330-03:00] Q5: A/B/C completados con resultados equivalentes
+[2026-10-16T22:24:20.608744-03:00] Suite completa. Los contadores globales/OS pueden incluir actividad de otras sesiones.

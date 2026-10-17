@@ -1,0 +1,70 @@
+{
+  "version": {
+    "available": true,
+    "rows": 1
+  },
+  "variables": {
+    "available": true,
+    "rows": 16
+  },
+  "consumers": {
+    "available": false,
+    "reason": "ProgrammingError: 1142 (42000): SELECT command denied to user 'ep2_runner'@'localhost' for table 'setup_consumers'"
+  },
+  "instruments": {
+    "available": false,
+    "reason": "ProgrammingError: 1142 (42000): SELECT command denied to user 'ep2_runner'@'localhost' for table 'setup_instruments'"
+  },
+  "grants": {
+    "available": true,
+    "rows": 2
+  },
+  "create_ep2_customers": {
+    "available": true,
+    "rows": 1
+  },
+  "create_ep2_products": {
+    "available": true,
+    "rows": 1
+  },
+  "create_ep2_stores": {
+    "available": true,
+    "rows": 1
+  },
+  "create_ep2_orders": {
+    "available": true,
+    "rows": 1
+  },
+  "create_ep2_order_items": {
+    "available": true,
+    "rows": 1
+  },
+  "create_ep2_payments": {
+    "available": true,
+    "rows": 1
+  },
+  "orders_distribution": {
+    "available": true,
+    "rows": 4
+  },
+  "payments_distribution": {
+    "available": true,
+    "rows": 3
+  },
+  "customers_distribution": {
+    "available": true,
+    "rows": 15
+  },
+  "products_distribution": {
+    "available": true,
+    "rows": 5
+  },
+  "stores_distribution": {
+    "available": true,
+    "rows": 4
+  },
+  "order_dates": {
+    "available": true,
+    "rows": 1
+  }
+}

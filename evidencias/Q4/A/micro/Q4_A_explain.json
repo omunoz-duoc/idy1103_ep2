@@ -1,0 +1,78 @@
+{
+  "query_block": {
+    "select_id": 1,
+    "cost_info": {
+      "query_cost": "495.55"
+    },
+    "ordering_operation": {
+      "using_filesort": false,
+      "table": {
+        "table_name": "c",
+        "access_type": "index",
+        "key": "PRIMARY",
+        "used_key_parts": [
+          "customer_id"
+        ],
+        "key_length": "8",
+        "rows_examined_per_scan": 4883,
+        "rows_produced_per_join": 48,
+        "filtered": "1.00",
+        "cost_info": {
+          "read_cost": "490.67",
+          "eval_cost": "4.88",
+          "prefix_cost": "495.55",
+          "data_read_per_join": "71K"
+        },
+        "used_columns": [
+          "customer_id",
+          "full_name",
+          "city",
+          "segment"
+        ],
+        "attached_condition": "((`ep2_lab`.`c`.`segment` = <cache>((@`segment`))) and (`ep2_lab`.`c`.`city` = <cache>((@`city`))) and ((/* select#2 */ select count(0) from `ep2_lab`.`ep2_orders` `o` where ((`ep2_lab`.`o`.`status` = 'PAID') and (`ep2_lab`.`o`.`customer_id` = `ep2_lab`.`c`.`customer_id`) and (`ep2_lab`.`o`.`order_ts` >= <cache>((@`long_start_ts`))) and (`ep2_lab`.`o`.`order_ts` < <cache>((@`end_ts`))))) > 0))",
+        "attached_subqueries": [
+          {
+            "dependent": true,
+            "cacheable": false,
+            "query_block": {
+              "select_id": 2,
+              "cost_info": {
+                "query_cost": "1.44"
+              },
+              "table": {
+                "table_name": "o",
+                "access_type": "ref",
+                "possible_keys": [
+                  "fk_orders_customer"
+                ],
+                "key": "fk_orders_customer",
+                "used_key_parts": [
+                  "customer_id"
+                ],
+                "key_length": "8",
+                "ref": [
+                  "ep2_lab.c.customer_id"
+                ],
+                "rows_examined_per_scan": 4,
+                "rows_produced_per_join": 0,
+                "filtered": "1.21",
+                "cost_info": {
+                  "read_cost": "1.03",
+                  "eval_cost": "0.01",
+                  "prefix_cost": "1.44",
+                  "data_read_per_join": "6"
+                },
+                "used_columns": [
+                  "customer_id",
+                  "order_ts",
+                  "status"
+                ],
+                "attached_condition": "((`ep2_lab`.`o`.`status` = 'PAID') and (`ep2_lab`.`o`.`order_ts` >= <cache>((@`long_start_ts`))) and (`ep2_lab`.`o`.`order_ts` < <cache>((@`end_ts`))))"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

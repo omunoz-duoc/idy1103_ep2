@@ -1,0 +1,17 @@
+metric,before,after,delta,kind
+Created_tmp_disk_tables,40,41,1,counter
+Created_tmp_tables,10577,20581,10004,counter
+Innodb_buffer_pool_read_requests,374084779,643014833,268930054,counter
+Innodb_buffer_pool_reads,1499,1499,0,counter
+Innodb_data_read,25676288,25676288,0,counter
+Innodb_data_reads,1908,1908,0,counter
+Innodb_data_writes,27324,27327,3,counter
+Innodb_data_written,191352832,191401984,49152,counter
+Innodb_os_log_written,67799552,67799552,0,counter
+Innodb_row_lock_time,0,0,0,counter
+Innodb_row_lock_waits,0,0,0,counter
+Select_scan,31189,41193,10004,counter
+Sort_rows,1732206,1932208,200002,counter
+Threads_connected,2,2,,gauge
+Threads_running,2,2,,gauge
+Uptime,1911834,1911997,163,counter

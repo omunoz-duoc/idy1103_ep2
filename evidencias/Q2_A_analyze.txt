@@ -1,4 +1,0 @@
--> Group aggregate: count(0), sum(p.amount), avg(p.amount)  (cost=1696 rows=123) (actual time=2.76..2.76 rows=1 loops=1)
-    -> Filter: ((p.method = <cache>((@method))) and (cast(p.paid_ts as date) >= <cache>(cast((@start_ts) as date))) and (cast(p.paid_ts as date) < <cache>(cast((@end_ts) as date))))  (cost=1544 rows=1519) (actual time=0.13..2.73 rows=324 loops=1)
-        -> Table scan on p  (cost=1544 rows=15194) (actual time=0.118..1.9 rows=15000 loops=1)
-

@@ -1,0 +1,44 @@
+{
+  "query_block": {
+    "select_id": 1,
+    "cost_info": {
+      "query_cost": "171.95"
+    },
+    "ordering_operation": {
+      "using_filesort": true,
+      "table": {
+        "table_name": "o",
+        "access_type": "ref",
+        "possible_keys": [
+          "fk_orders_store"
+        ],
+        "key": "fk_orders_store",
+        "used_key_parts": [
+          "store_id"
+        ],
+        "key_length": "8",
+        "ref": [
+          "const"
+        ],
+        "rows_examined_per_scan": 992,
+        "rows_produced_per_join": 11,
+        "filtered": "1.11",
+        "cost_info": {
+          "read_cost": "72.75",
+          "eval_cost": "1.10",
+          "prefix_cost": "171.95",
+          "data_read_per_join": "1K"
+        },
+        "used_columns": [
+          "order_id",
+          "customer_id",
+          "store_id",
+          "order_ts",
+          "status",
+          "total_amount"
+        ],
+        "attached_condition": "((`ep2_lab`.`o`.`status` = 'CREATED') and (`ep2_lab`.`o`.`order_ts` >= <cache>((@`long_start_ts`))) and (`ep2_lab`.`o`.`order_ts` < <cache>((@`end_ts`))))"
+      }
+    }
+  }
+}

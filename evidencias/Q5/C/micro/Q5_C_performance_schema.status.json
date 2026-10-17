@@ -1,0 +1,1 @@
+{"available": false, "reason": "1142 (42000): SELECT command denied to user 'ep2_runner'@'localhost' for table 'threads'"}

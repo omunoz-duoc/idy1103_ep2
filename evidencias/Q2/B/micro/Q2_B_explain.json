@@ -1,0 +1,30 @@
+{
+  "query_block": {
+    "select_id": 1,
+    "cost_info": {
+      "query_cost": "1543.65"
+    },
+    "grouping_operation": {
+      "using_filesort": false,
+      "table": {
+        "table_name": "p",
+        "access_type": "ALL",
+        "rows_examined_per_scan": 15194,
+        "rows_produced_per_join": 168,
+        "filtered": "1.11",
+        "cost_info": {
+          "read_cost": "1391.71",
+          "eval_cost": "16.88",
+          "prefix_cost": "1543.65",
+          "data_read_per_join": "18K"
+        },
+        "used_columns": [
+          "paid_ts",
+          "method",
+          "amount"
+        ],
+        "attached_condition": "((`ep2_lab`.`p`.`method` = <cache>((@`method`))) and (`ep2_lab`.`p`.`paid_ts` >= <cache>((@`start_ts`))) and (`ep2_lab`.`p`.`paid_ts` < <cache>((@`end_ts`))))"
+      }
+    }
+  }
+}

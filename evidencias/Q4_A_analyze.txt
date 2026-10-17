@@ -1,7 +1,0 @@
--> Filter: ((c.segment = <cache>((@segment))) and (c.city = <cache>((@city))) and ((select #2) > 0))  (cost=496 rows=48.8) (actual time=0.0991..3.18 rows=118 loops=1)
-    -> Index scan on c using PRIMARY  (cost=496 rows=4883) (actual time=0.0192..0.815 rows=5000 loops=1)
-    -> Select #2 (subquery in condition; dependent)
-        -> Aggregate: count(0)  (cost=1.04 rows=1) (actual time=0.00568..0.0057 rows=1 loops=335)
-            -> Filter: ((o.`status` = 'PAID') and (o.order_ts >= <cache>((@long_start_ts))) and (o.order_ts < <cache>((@end_ts))))  (cost=1.04 rows=0.05) (actual time=0.0053..0.00553 rows=0.418 loops=335)
-                -> Index lookup on o using fk_orders_customer (customer_id=c.customer_id)  (cost=1.04 rows=4.13) (actual time=0.00452..0.00513 rows=3.77 loops=335)
-

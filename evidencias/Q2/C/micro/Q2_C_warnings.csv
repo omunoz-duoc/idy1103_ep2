@@ -1,0 +1,2 @@
+Level,Code,Message
+Note,1003,"/* select#1 */ select `ep2_lab`.`p`.`method` AS `method`,count(0) AS `operaciones`,sum(`ep2_lab`.`p`.`amount`) AS `monto_total`,avg(`ep2_lab`.`p`.`amount`) AS `ticket_medio` from `ep2_lab`.`ep2_payments` `p` where ((`ep2_lab`.`p`.`method` = <cache>((@`method`))) and (`ep2_lab`.`p`.`paid_ts` >= <cache>((@`start_ts`))) and (`ep2_lab`.`p`.`paid_ts` < <cache>((@`end_ts`)))) group by `ep2_lab`.`p`.`method`"

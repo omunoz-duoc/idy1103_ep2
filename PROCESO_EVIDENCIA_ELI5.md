@@ -1,5 +1,7 @@
 # EP2 evidence process — ELI5
 
+Para ejecutar toda la recolección Q1–Q5 automáticamente, consulte primero [EJECUCION_COMPLETA.md](docs/EJECUCION_COMPLETA.md). Los pasos individuales de este documento siguen disponibles; cada runner guarda ahora sus archivos en `evidencias/Qn/` y el maestro usa subcarpetas A/B/C con perfiles micro/carga.
+
 Think of each query as a runner in a race:
 
 - **A** is the original query.
@@ -52,10 +54,11 @@ The supplied dataset already raises `cte_max_recursion_depth` in the same connec
 From the project folder:
 
 ```bash
-mysql -u root -p --table < sql/01_dataset_evidence.sql > evidencias/01_dataset.txt
+mkdir -p evidencias/entorno
+mysql -u root -p --table < sql/01_dataset_evidence.sql > evidencias/entorno/01_dataset.txt
 ```
 
-Open `evidencias/01_dataset.txt`. Confirm at least:
+Open `evidencias/entorno/01_dataset.txt`. Confirm at least:
 
 - customers = 5,000;
 - orders = 20,000;
@@ -66,13 +69,13 @@ If those three numbers are wrong, stop. Reload the dataset before benchmarking.
 Save the MySQL configuration evidence too:
 
 ```bash
-mysql -u root -p --table < sql/00_environment.sql > evidencias/00_mysql_environment.txt
+mysql -u root -p --table < sql/00_environment.sql > evidencias/entorno/00_mysql_environment.txt
 ```
 
 Finally, update table statistics once and save the response:
 
 ```bash
-mysql -u root -p --table < sql/02_prepare_baseline.sql > evidencias/02_analyze_initial.txt
+mysql -u root -p --table < sql/02_prepare_baseline.sql > evidencias/entorno/02_analyze_initial.txt
 ```
 
 Do not repeat this between A, B, and C unless you document it and apply the same rule to every phase.
@@ -270,7 +273,7 @@ This creates `resultados_comparativos.csv`. Check that `same_result_as_A` is `tr
 
 Text files are stronger reproducible evidence, but the rubric also asks for captures. Take clearly labelled screenshots of:
 
-1. The required table counts in `evidencias/01_dataset.txt` or your SQL client.
+1. The required table counts in `evidencias/entorno/01_dataset.txt` or your SQL client.
 2. Each selected query's A plan (`Qn_A_tree.txt` or the SQL client).
 3. Each selected query's C plan (`Qn_C_tree.txt`).
 4. The final A/B/C comparison table.
@@ -289,27 +292,19 @@ Before each batch:
 
 ### Manual item 3: CPU, RAM, and disk I/O for sustained load
 
-One query is usually too short for a useful OS screenshot. If the report requires OS monitoring, run a longer, fixed-size batch while monitoring the MySQL process.
-
-Linux/WSL example:
+La captura de CPU/RAM/I/O está automatizada para Linux/WSL. Desde la misma terminal que contiene sus credenciales MySQL:
 
 ```bash
-pgrep -a mysqld
-pidstat -u -r -d -p MYSQL_PID 1 | tee evidencias/Q1_A_os_pidstat.txt
+bash automation/collect_os_evidence.sh --case Q1 --stage A --sudo-monitor
+bash automation/collect_os_evidence.sh --case Q1 --stage B --sudo-monitor
+bash automation/collect_os_evidence.sh --case Q1 --stage C --sudo-monitor
 ```
 
-Start `pidstat`, then run a larger evidence batch in another terminal. Use a separate output folder so the sustained-load run does not overwrite the 10-iteration microbenchmark:
+El script detecta el PID, mide 10.000 ejecuciones por etapa y detiene `pidstat` al terminar. En C también crea y limpia el índice. Guarda cada corrida en una carpeta nueva dentro de `evidencias_carga/`. Los índices, planes y calentamientos quedan fuera de la ventana de monitoreo. `--sudo-monitor` permite leer contadores de I/O del proceso sin ejecutar el runner SQL como root.
 
-```bash
-python automation/evidence_runner.py \
-  --case Q1 --stage A \
-  --query queries/Q1_A.sql \
-  --params sql/00_parametros.sql \
-  --iterations 1000 \
-  --output evidencias_carga
-```
+Repita para Q2–Q5. Use las mismas iteraciones en A/B/C y aumente ese número si aparece un aviso de lote corto. La observación de concurrencia y las capturas de pantalla siguen siendo manuales.
 
-Stop `pidstat` with Ctrl+C when the runner finishes. Use the same iteration count for A/B/C. For Docker, use `docker stats`; for Windows, use Performance Monitor. Explain that these are batch-level measurements, not exact CPU for one statement.
+Consulte [MONITOREO_OS.md](docs/MONITOREO_OS.md) para instalación, opciones y explicación de CPU, RSS, bytes de I/O y sus limitaciones.
 
 ### Manual item 4: Explain two observable causes per query
 

@@ -1,0 +1,2 @@
+id,select_type,table,partitions,type,possible_keys,key,key_len,ref,rows,filtered,Extra
+1,SIMPLE,p,NULL,ALL,NULL,NULL,NULL,NULL,15194,10.0,Using where

@@ -1,0 +1,3 @@
+Level,Code,Message
+Note,1276,Field or reference 'ep2_lab.c.customer_id' of SELECT #2 was resolved in SELECT #1
+Note,1003,"/* select#1 */ select `ep2_lab`.`c`.`customer_id` AS `customer_id`,`ep2_lab`.`c`.`full_name` AS `full_name`,`ep2_lab`.`c`.`city` AS `city`,`ep2_lab`.`c`.`segment` AS `segment` from `ep2_lab`.`ep2_customers` `c` semi join (`ep2_lab`.`ep2_orders` `o`) where ((`ep2_lab`.`o`.`customer_id` = `ep2_lab`.`c`.`customer_id`) and (`ep2_lab`.`o`.`status` = 'PAID') and (`ep2_lab`.`c`.`segment` = <cache>((@`segment`))) and (`ep2_lab`.`c`.`city` = <cache>((@`city`))) and (`ep2_lab`.`o`.`order_ts` >= <cache>((@`long_start_ts`))) and (`ep2_lab`.`o`.`order_ts` < <cache>((@`end_ts`)))) order by `ep2_lab`.`c`.`customer_id`"

@@ -1,6 +1,0 @@
--> Nested loop semijoin  (cost=552 rows=8.71) (actual time=0.0437..1.75 rows=118 loops=1)
-    -> Filter: ((c.segment = <cache>((@segment))) and (c.city = <cache>((@city))))  (cost=496 rows=48.8) (actual time=0.0272..1.2 rows=335 loops=1)
-        -> Index scan on c using PRIMARY  (cost=496 rows=4883) (actual time=0.0188..0.915 rows=5000 loops=1)
-    -> Filter: ((o.order_ts >= <cache>((@long_start_ts))) and (o.order_ts < <cache>((@end_ts))))  (cost=0.177 rows=0.178) (actual time=0.00157..0.00157 rows=0.352 loops=335)
-        -> Covering index lookup on o using idx_ep2_q4_cust_status_ts (customer_id=c.customer_id, status='PAID')  (cost=0.177 rows=1.61) (actual time=0.00128..0.00136 rows=0.821 loops=335)
-

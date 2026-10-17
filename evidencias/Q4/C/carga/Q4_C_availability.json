@@ -1,0 +1,13 @@
+{
+  "explain_traditional": {
+    "available": true,
+    "rows": 2
+  },
+  "explain_json": {
+    "available": true
+  },
+  "warnings": {
+    "available": true,
+    "rows": 2
+  }
+}

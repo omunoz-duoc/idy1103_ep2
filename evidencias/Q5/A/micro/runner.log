@@ -1,0 +1,15 @@
+{
+  "case": "Q5",
+  "stage": "A",
+  "iterations": 30,
+  "warmups": 2,
+  "rows_returned": 6,
+  "sha256": "837a1de4c261df7e5c0112efd25561ed973f0c546942fd9c8e58a017b6fb575e",
+  "min_ms": 4.262445,
+  "mean_ms": 4.742041933333334,
+  "median_ms": 4.6755475,
+  "p95_ms_nearest_rank": 5.677364,
+  "max_ms": 5.751337,
+  "population_stdev_ms": 0.404647603071935
+}
+Evidence written to /home/aframuz/code/mvmv/duoc/6to_semestre/admin_base_datos/evaluacion_02/evidencias/Q5/A/micro
